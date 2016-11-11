@@ -24,7 +24,7 @@
 		2DAF950DFBDECDFF790510C4 /* libPods-VariableStrokeWidthTut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VariableStrokeWidthTut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BE133CA7F8E0D13229C979 /* Pods-VariableStrokeWidthTut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VariableStrokeWidthTut.release.xcconfig"; path = "Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut.release.xcconfig"; sourceTree = "<group>"; };
 		AB4E151AF63B62E08428C120 /* Pods-VariableStrokeWidthTut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VariableStrokeWidthTut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut.debug.xcconfig"; sourceTree = "<group>"; };
-		C74E7C921DD2E0A30024BFE0 /* VariableStrokeWidthTut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VariableStrokeWidthTut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74E7C921DD2E0A30024BFE0 /* MySketchPadIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySketchPadIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E7C961DD2E0A30024BFE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C74E7C981DD2E0A30024BFE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C74E7C991DD2E0A30024BFE0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		C74E7C931DD2E0A30024BFE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C74E7C921DD2E0A30024BFE0 /* VariableStrokeWidthTut.app */,
+				C74E7C921DD2E0A30024BFE0 /* MySketchPadIOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C74E7C911DD2E0A30024BFE0 /* VariableStrokeWidthTut */ = {
+		C74E7C911DD2E0A30024BFE0 /* MySketchPadIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C74E7CAC1DD2E0A30024BFE0 /* Build configuration list for PBXNativeTarget "VariableStrokeWidthTut" */;
+			buildConfigurationList = C74E7CAC1DD2E0A30024BFE0 /* Build configuration list for PBXNativeTarget "MySketchPadIOS" */;
 			buildPhases = (
 				4813E08BF71DEDCB131887AD /* [CP] Check Pods Manifest.lock */,
 				C74E7C8E1DD2E0A30024BFE0 /* Sources */,
@@ -139,9 +139,9 @@
 			);
 			dependencies = (
 			);
-			name = VariableStrokeWidthTut;
+			name = MySketchPadIOS;
 			productName = VariableStrokeWidthTut;
-			productReference = C74E7C921DD2E0A30024BFE0 /* VariableStrokeWidthTut.app */;
+			productReference = C74E7C921DD2E0A30024BFE0 /* MySketchPadIOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C74E7C8D1DD2E0A30024BFE0 /* Build configuration list for PBXProject "VariableStrokeWidthTut" */;
+			buildConfigurationList = C74E7C8D1DD2E0A30024BFE0 /* Build configuration list for PBXProject "MySketchPadIOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -173,7 +173,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C74E7C911DD2E0A30024BFE0 /* VariableStrokeWidthTut */,
+				C74E7C911DD2E0A30024BFE0 /* MySketchPadIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -374,7 +374,7 @@
 				DEVELOPMENT_TEAM = N7956XYWZ3;
 				INFOPLIST_FILE = VariableStrokeWidthTut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.VariableStrokeWidthTut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -387,7 +387,7 @@
 				DEVELOPMENT_TEAM = N7956XYWZ3;
 				INFOPLIST_FILE = VariableStrokeWidthTut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.VariableStrokeWidthTut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -395,7 +395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C74E7C8D1DD2E0A30024BFE0 /* Build configuration list for PBXProject "VariableStrokeWidthTut" */ = {
+		C74E7C8D1DD2E0A30024BFE0 /* Build configuration list for PBXProject "MySketchPadIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C74E7CAA1DD2E0A30024BFE0 /* Debug */,
@@ -404,13 +404,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C74E7CAC1DD2E0A30024BFE0 /* Build configuration list for PBXNativeTarget "VariableStrokeWidthTut" */ = {
+		C74E7CAC1DD2E0A30024BFE0 /* Build configuration list for PBXNativeTarget "MySketchPadIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C74E7CAD1DD2E0A30024BFE0 /* Debug */,
 				C74E7CAE1DD2E0A30024BFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
