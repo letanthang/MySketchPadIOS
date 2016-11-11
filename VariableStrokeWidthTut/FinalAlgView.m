@@ -50,7 +50,7 @@ typedef struct
     [self setMultipleTouchEnabled:NO];
     drawingQueue = dispatch_queue_create("drawingQueue", NULL);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(eraseDrawing:)];
-    tap.numberOfTapsRequired = 2; // Tap twice to clear drawing!
+    tap.numberOfTapsRequired = 3; // Tap twice to clear drawing!
     [self addGestureRecognizer:tap];
 }
 
