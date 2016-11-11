@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+@property (strong, nonatomic) UIColor *penColor;
+@property (strong, nonatomic) UIColor *bgColor;
+@property (nonatomic) CGFloat penWidth;
 
 @end
 
