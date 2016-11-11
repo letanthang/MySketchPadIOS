@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32394FC060B7AA2C1A1EF143 /* libPods-VariableStrokeWidthTut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DAF950DFBDECDFF790510C4 /* libPods-VariableStrokeWidthTut.a */; };
 		C74E7C971DD2E0A30024BFE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7C961DD2E0A30024BFE0 /* main.m */; };
 		C74E7C9A1DD2E0A30024BFE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7C991DD2E0A30024BFE0 /* AppDelegate.m */; };
 		C74E7C9D1DD2E0A30024BFE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7C9C1DD2E0A30024BFE0 /* ViewController.m */; };
@@ -18,12 +17,15 @@
 		C74E7CB11DD2E0F50024BFE0 /* NaiveVarWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB01DD2E0F50024BFE0 /* NaiveVarWidthView.m */; };
 		C74E7CB41DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB31DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m */; };
 		C74E7CB71DD2FB260024BFE0 /* FinalAlgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */; };
+		CA8AADACBC9776F5FDE09292 /* libPods-MySketchPadIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8739D95E2AA757E608722A /* libPods-MySketchPadIOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DAF950DFBDECDFF790510C4 /* libPods-VariableStrokeWidthTut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VariableStrokeWidthTut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BE133CA7F8E0D13229C979 /* Pods-VariableStrokeWidthTut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VariableStrokeWidthTut.release.xcconfig"; path = "Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut.release.xcconfig"; sourceTree = "<group>"; };
 		AB4E151AF63B62E08428C120 /* Pods-VariableStrokeWidthTut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VariableStrokeWidthTut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut.debug.xcconfig"; sourceTree = "<group>"; };
+		BF8739D95E2AA757E608722A /* libPods-MySketchPadIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MySketchPadIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C239174C6FFE912F102A9168 /* Pods-MySketchPadIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySketchPadIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS.release.xcconfig"; sourceTree = "<group>"; };
 		C74E7C921DD2E0A30024BFE0 /* MySketchPadIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySketchPadIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E7C961DD2E0A30024BFE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C74E7C981DD2E0A30024BFE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 		C74E7CB31DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthBGRenderingView.m; sourceTree = "<group>"; };
 		C74E7CB51DD2FB260024BFE0 /* FinalAlgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalAlgView.h; sourceTree = "<group>"; };
 		C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalAlgView.m; sourceTree = "<group>"; };
+		DC28B72DBB1BA11C74ACBD8C /* Pods-MySketchPadIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySketchPadIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32394FC060B7AA2C1A1EF143 /* libPods-VariableStrokeWidthTut.a in Frameworks */,
+				CA8AADACBC9776F5FDE09292 /* libPods-MySketchPadIOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,8 @@
 			children = (
 				AB4E151AF63B62E08428C120 /* Pods-VariableStrokeWidthTut.debug.xcconfig */,
 				73BE133CA7F8E0D13229C979 /* Pods-VariableStrokeWidthTut.release.xcconfig */,
+				DC28B72DBB1BA11C74ACBD8C /* Pods-MySketchPadIOS.debug.xcconfig */,
+				C239174C6FFE912F102A9168 /* Pods-MySketchPadIOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				2DAF950DFBDECDFF790510C4 /* libPods-VariableStrokeWidthTut.a */,
+				BF8739D95E2AA757E608722A /* libPods-MySketchPadIOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,7 +210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4813E08BF71DEDCB131887AD /* [CP] Check Pods Manifest.lock */ = {
@@ -234,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -368,7 +374,7 @@
 		};
 		C74E7CAD1DD2E0A30024BFE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB4E151AF63B62E08428C120 /* Pods-VariableStrokeWidthTut.debug.xcconfig */;
+			baseConfigurationReference = DC28B72DBB1BA11C74ACBD8C /* Pods-MySketchPadIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N7956XYWZ3;
@@ -381,7 +387,7 @@
 		};
 		C74E7CAE1DD2E0A30024BFE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73BE133CA7F8E0D13229C979 /* Pods-VariableStrokeWidthTut.release.xcconfig */;
+			baseConfigurationReference = C239174C6FFE912F102A9168 /* Pods-MySketchPadIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N7956XYWZ3;
