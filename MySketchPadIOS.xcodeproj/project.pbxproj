@@ -17,6 +17,8 @@
 		C74E7CB41DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB31DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m */; };
 		C74E7CB71DD2FB260024BFE0 /* FinalAlgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */; };
 		C79F1B271DD95A4E008BF1DA /* NaiveVarWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = C79F1B261DD95A4E008BF1DA /* NaiveVarWidthView.m */; };
+		C79F1B341DD9705D008BF1DA /* list-fat-7.png in Resources */ = {isa = PBXBuildFile; fileRef = C79F1B331DD9705D008BF1DA /* list-fat-7.png */; };
+		C79F1B371DD9772D008BF1DA /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79F1B361DD9772D008BF1DA /* ConfigViewController.m */; };
 		CA8AADACBC9776F5FDE09292 /* libPods-MySketchPadIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8739D95E2AA757E608722A /* libPods-MySketchPadIOS.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,9 @@
 		C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalAlgView.m; sourceTree = "<group>"; };
 		C79F1B251DD95A4E008BF1DA /* NaiveVarWidthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaiveVarWidthView.h; sourceTree = "<group>"; };
 		C79F1B261DD95A4E008BF1DA /* NaiveVarWidthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthView.m; sourceTree = "<group>"; };
+		C79F1B331DD9705D008BF1DA /* list-fat-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-fat-7.png"; sourceTree = "<group>"; };
+		C79F1B351DD9772D008BF1DA /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		C79F1B361DD9772D008BF1DA /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		DC28B72DBB1BA11C74ACBD8C /* Pods-MySketchPadIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySketchPadIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +95,7 @@
 		C74E7C941DD2E0A30024BFE0 /* VariableStrokeWidthTut */ = {
 			isa = PBXGroup;
 			children = (
+				C79F1B321DD97050008BF1DA /* Resouces */,
 				C74E7C951DD2E0A30024BFE0 /* Supporting Files */,
 				C7EC7B8C1DD57AF3007008CD /* Old */,
 				C74E7C9B1DD2E0A30024BFE0 /* ViewController.h */,
@@ -97,6 +103,8 @@
 				C74E7C9E1DD2E0A30024BFE0 /* Main.storyboard */,
 				C74E7CB51DD2FB260024BFE0 /* FinalAlgView.h */,
 				C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */,
+				C79F1B351DD9772D008BF1DA /* ConfigViewController.h */,
+				C79F1B361DD9772D008BF1DA /* ConfigViewController.m */,
 			);
 			path = VariableStrokeWidthTut;
 			sourceTree = "<group>";
@@ -113,6 +121,14 @@
 				C74E7C961DD2E0A30024BFE0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C79F1B321DD97050008BF1DA /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				C79F1B331DD9705D008BF1DA /* list-fat-7.png */,
+			);
+			name = Resouces;
 			sourceTree = "<group>";
 		};
 		C7EC7B8C1DD57AF3007008CD /* Old */ = {
@@ -198,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74E7CA81DD2E0A30024BFE0 /* LaunchScreen.storyboard in Resources */,
+				C79F1B341DD9705D008BF1DA /* list-fat-7.png in Resources */,
 				C74E7CA51DD2E0A30024BFE0 /* Assets.xcassets in Resources */,
 				C74E7CA01DD2E0A30024BFE0 /* Main.storyboard in Resources */,
 			);
@@ -264,6 +281,7 @@
 				C74E7C971DD2E0A30024BFE0 /* main.m in Sources */,
 				C79F1B271DD95A4E008BF1DA /* NaiveVarWidthView.m in Sources */,
 				C74E7CB71DD2FB260024BFE0 /* FinalAlgView.m in Sources */,
+				C79F1B371DD9772D008BF1DA /* ConfigViewController.m in Sources */,
 				C74E7CB41DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +406,7 @@
 				DEVELOPMENT_TEAM = N7956XYWZ3;
 				INFOPLIST_FILE = VariableStrokeWidthTut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -401,7 +419,7 @@
 				DEVELOPMENT_TEAM = N7956XYWZ3;
 				INFOPLIST_FILE = VariableStrokeWidthTut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
