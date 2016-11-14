@@ -143,7 +143,8 @@
         self.color = color;
         if (color.rgbColor == nil)
         {
-            self.view.backgroundColor = [UIColor colorWithPatternImage:color.image];
+            //self.view.backgroundColor = [UIColor colorWithPatternImage:color.image];
+            self.containerView.backgroundColor = [UIColor colorWithPatternImage:color.image];
         }
         else
         {

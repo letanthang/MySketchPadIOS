@@ -14,9 +14,9 @@
 		C74E7CA31DD2E0A30024BFE0 /* VariableStrokeWidthTut.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CA11DD2E0A30024BFE0 /* VariableStrokeWidthTut.xcdatamodeld */; };
 		C74E7CA51DD2E0A30024BFE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E7CA41DD2E0A30024BFE0 /* Assets.xcassets */; };
 		C74E7CA81DD2E0A30024BFE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74E7CA61DD2E0A30024BFE0 /* LaunchScreen.storyboard */; };
-		C74E7CB11DD2E0F50024BFE0 /* NaiveVarWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB01DD2E0F50024BFE0 /* NaiveVarWidthView.m */; };
 		C74E7CB41DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB31DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m */; };
 		C74E7CB71DD2FB260024BFE0 /* FinalAlgView.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */; };
+		C79F1B271DD95A4E008BF1DA /* NaiveVarWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = C79F1B261DD95A4E008BF1DA /* NaiveVarWidthView.m */; };
 		CA8AADACBC9776F5FDE09292 /* libPods-MySketchPadIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8739D95E2AA757E608722A /* libPods-MySketchPadIOS.a */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +37,12 @@
 		C74E7CA41DD2E0A30024BFE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74E7CA71DD2E0A30024BFE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C74E7CA91DD2E0A30024BFE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C74E7CAF1DD2E0F50024BFE0 /* NaiveVarWidthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NaiveVarWidthView.h; path = ../NaiveVarWidthView.h; sourceTree = "<group>"; };
-		C74E7CB01DD2E0F50024BFE0 /* NaiveVarWidthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NaiveVarWidthView.m; path = ../NaiveVarWidthView.m; sourceTree = "<group>"; };
 		C74E7CB21DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaiveVarWidthBGRenderingView.h; sourceTree = "<group>"; };
 		C74E7CB31DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthBGRenderingView.m; sourceTree = "<group>"; };
 		C74E7CB51DD2FB260024BFE0 /* FinalAlgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalAlgView.h; sourceTree = "<group>"; };
 		C74E7CB61DD2FB260024BFE0 /* FinalAlgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalAlgView.m; sourceTree = "<group>"; };
+		C79F1B251DD95A4E008BF1DA /* NaiveVarWidthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaiveVarWidthView.h; sourceTree = "<group>"; };
+		C79F1B261DD95A4E008BF1DA /* NaiveVarWidthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaiveVarWidthView.m; sourceTree = "<group>"; };
 		DC28B72DBB1BA11C74ACBD8C /* Pods-MySketchPadIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySketchPadIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,8 +118,8 @@
 		C7EC7B8C1DD57AF3007008CD /* Old */ = {
 			isa = PBXGroup;
 			children = (
-				C74E7CAF1DD2E0F50024BFE0 /* NaiveVarWidthView.h */,
-				C74E7CB01DD2E0F50024BFE0 /* NaiveVarWidthView.m */,
+				C79F1B251DD95A4E008BF1DA /* NaiveVarWidthView.h */,
+				C79F1B261DD95A4E008BF1DA /* NaiveVarWidthView.m */,
 				C74E7CB21DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.h */,
 				C74E7CB31DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m */,
 			);
@@ -260,9 +260,9 @@
 			files = (
 				C74E7C9D1DD2E0A30024BFE0 /* ViewController.m in Sources */,
 				C74E7C9A1DD2E0A30024BFE0 /* AppDelegate.m in Sources */,
-				C74E7CB11DD2E0F50024BFE0 /* NaiveVarWidthView.m in Sources */,
 				C74E7CA31DD2E0A30024BFE0 /* VariableStrokeWidthTut.xcdatamodeld in Sources */,
 				C74E7C971DD2E0A30024BFE0 /* main.m in Sources */,
+				C79F1B271DD95A4E008BF1DA /* NaiveVarWidthView.m in Sources */,
 				C74E7CB71DD2FB260024BFE0 /* FinalAlgView.m in Sources */,
 				C74E7CB41DD2F7A00024BFE0 /* NaiveVarWidthBGRenderingView.m in Sources */,
 			);
@@ -388,7 +388,7 @@
 				DEVELOPMENT_TEAM = N7956XYWZ3;
 				INFOPLIST_FILE = VariableStrokeWidthTut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -401,7 +401,7 @@
 				DEVELOPMENT_TEAM = N7956XYWZ3;
 				INFOPLIST_FILE = VariableStrokeWidthTut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thangproduct.MySketchPadIOS1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
