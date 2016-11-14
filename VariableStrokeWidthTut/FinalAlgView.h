@@ -16,5 +16,6 @@
 
 - (UIImage *)captureView;
 - (void) setFillBG: (UIColor *)color;
+- (void)reDraw;
 
 @end

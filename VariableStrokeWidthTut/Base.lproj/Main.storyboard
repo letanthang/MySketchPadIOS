@@ -7,10 +7,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My SketchPad-->
+        <!--SketchPad-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -47,12 +48,19 @@
                             <constraint firstItem="coO-Yq-GIf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="zC0-vo-AOF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My SketchPad" id="Dcu-rA-tqF">
-                        <barButtonItem key="leftBarButtonItem" image="list-fat-7.png" id="ugL-x8-dst">
-                            <connections>
-                                <segue destination="cgn-Jq-v9O" kind="show" identifier="showConfig" id="U2Y-J1-pL9"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="SketchPad" id="Dcu-rA-tqF">
+                        <leftBarButtonItems>
+                            <barButtonItem image="list-fat-7.png" id="ugL-x8-dst">
+                                <connections>
+                                    <segue destination="cgn-Jq-v9O" kind="show" identifier="showConfig" id="U2Y-J1-pL9"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="arrow-small-17.png" id="mKj-yl-Prl">
+                                <connections>
+                                    <action selector="undoTapped:" destination="BYZ-38-t0r" id="Js6-kR-Tn0"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="dk5-W1-zQQ">
                             <connections>
                                 <action selector="saveTapped:" destination="BYZ-38-t0r" id="bbu-bk-1hy"/>
@@ -177,6 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow-small-17.png" width="30" height="30"/>
         <image name="list-fat-7.png" width="30" height="30"/>
     </resources>
 </document>

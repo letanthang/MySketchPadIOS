@@ -80,6 +80,11 @@
     
 }
 
+- (IBAction)undoTapped:(id)sender {
+    [self.padView reDraw];
+}
+
+
 - (void)               imageSave: (UIImage *) image
     didFinishSavingWithError: (NSError *) error
                  contextInfo: (void *) contextInfo {

@@ -31,7 +31,8 @@ typedef struct
     BOOL isFirstTouchPoint;
     LineSegment lastSegmentOfPrev;
     
-    
+    int count;
+    NSMutableArray *paths;
 }
 
 - (id)init {
@@ -45,6 +46,8 @@ typedef struct
 - (void) initHelper {
     self.color = [UIColor blackColor];
     self.opaque = false;
+    count = 0;
+    paths = [[NSMutableArray alloc] init];
     //self.bgColor = [UIColor whiteColor];
     //self.backgroundColor = [UIColor blueColor];
     [self setMultipleTouchEnabled:NO];
@@ -84,6 +87,55 @@ typedef struct
     incrementalImage = nil;
     [self setNeedsDisplay];
 }
+
+- (void)reDraw {
+    [self eraseDrawing:nil];
+    
+    count += 1;
+    
+    NSLog(@"paths count: %lu", (unsigned long)paths.count);
+    
+    for (int i = 0; i < paths.count - count; i++) {
+        UIBezierPath *offsetPath = paths[i];
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+        if (!incrementalImage)
+        {
+            UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+            [[UIColor clearColor] setFill];
+            [rectpath fill];
+        }
+        [incrementalImage drawAtPoint:CGPointZero];
+        [self.color setStroke];
+        [self.color setFill];
+        [offsetPath stroke]; // ................. (8)
+        [offsetPath fill];
+        incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        [self setNeedsDisplay];
+    }
+    
+//    for (UIBezierPath *offsetPath in paths) {
+//        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+//        if (!incrementalImage)
+//        {
+//            UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+//            [[UIColor clearColor] setFill];
+//            [rectpath fill];
+//        }
+//        [incrementalImage drawAtPoint:CGPointZero];
+//        [self.color setStroke];
+//        [self.color setFill];
+//        [offsetPath stroke]; // ................. (8)
+//        [offsetPath fill];
+//        incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext();
+//        [self setNeedsDisplay];
+//    }
+    
+   
+    
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     ctr = 0;
@@ -91,10 +143,13 @@ typedef struct
     UITouch *touch = [touches anyObject];
     pts[0] = [touch locationInView:self];
     isFirstTouchPoint = YES;
+    
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
+    
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
     ctr++;
@@ -147,7 +202,9 @@ typedef struct
                 lastSegmentOfPrev = ls[3]; // ................. (7)
                 // Suggestion: Apply smoothing on the shared line segment of the two adjacent offsetPaths
                 
+                
             }
+            
             UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0);
         
             
@@ -164,7 +221,11 @@ typedef struct
             [offsetPath fill];
             incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
-            [offsetPath removeAllPoints];
+            
+            [paths addObject:offsetPath];
+            
+            //[offsetPath removeAllPoints];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 bufIdx = 0;
                 [self setNeedsDisplay];
