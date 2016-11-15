@@ -44,6 +44,10 @@
     
 }
 
+-(BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (IBAction)penWidthSliderChanged:(UISlider *)sender {
     self.delegate.penWidth = sender.value;
 }

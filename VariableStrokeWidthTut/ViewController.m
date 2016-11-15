@@ -54,7 +54,7 @@
     
     [flashLabel setAttributedText:attributedString];
     
-    flashLabel.alpha = 0.0;
+    flashLabel.alpha = 0.5;
     
     [self.view addSubview:flashLabel];
     
@@ -83,6 +83,10 @@
     [animator startAnimation];
     
     
+}
+
+-(BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
