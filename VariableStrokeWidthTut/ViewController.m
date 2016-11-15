@@ -18,9 +18,7 @@
 
 @property (strong, nonatomic) IBOutlet FinalAlgView *padView;
 
-@property (strong, nonatomic) IBOutlet UIButton *colorButton;
-@property (strong, nonatomic) IBOutlet UIButton *saveButton;
-@property (strong, nonatomic) IBOutlet UISlider *widthSlider;
+
 
 @end
 
@@ -28,23 +26,62 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.view = [[FinalAlgView alloc] initWithFrame:self.view.bounds];
     
-//    self.view.backgroundColor = [UIColor lightGrayColor];
-    
-//    self.padView = [[FinalAlgView alloc] initWithFrame:self.padView.bounds];
-    //self.padView.backgroundColor = [UIColor whiteColor];
-
+    //0: init config
     self.penColor = [UIColor blackColor];
     self.bgColor = [UIColor whiteColor];
     self.penWidth = 1.0;
     
+    //1: style navigation bar title
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor blueColor], NSFontAttributeName: [UIFont fontWithName:@"Baskerville-Italic" size:22]}];
     
     
+    //2: create flash text for sketch pad
+    UILabel *flashLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 44)];
+    
+    //flashLabel.text = @"Lets Draw!";
+    [flashLabel setCenter:self.view.center];
+    
+    
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"Let's Draw With Us!"];
+    [attributedString addAttributes:@{NSForegroundColorAttributeName :[UIColor redColor], NSFontAttributeName: [UIFont fontWithName:@"Baskerville-Italic" size:24]} range:NSMakeRange(0,5)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(5,5)];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(10,5)];
+    [attributedString addAttributes:@{NSForegroundColorAttributeName:[UIColor purpleColor], NSFontAttributeName: [UIFont fontWithName:@"Baskerville-Italic" size:23]} range:NSMakeRange(15,4)];
+    
+   
+    
+    [flashLabel setAttributedText:attributedString];
+    
+    flashLabel.alpha = 0.0;
+    
+    [self.view addSubview:flashLabel];
+    
+    
+    //3: display & hide it with animator
+   
+    
+    UIViewPropertyAnimator *animator = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.9 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        flashLabel.alpha = 1.0;
+        flashLabel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.4, 1.4);
+        
+    } completion:^(UIViewAnimatingPosition finalPosition) {
+        UIViewPropertyAnimator *animator1 = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            flashLabel.alpha = 0;
+            flashLabel.transform = CGAffineTransformIdentity;
+            
+        } completion:^(UIViewAnimatingPosition finalPosition) {
+            [flashLabel removeFromSuperview];
+        }];
 
-    self.saveButton.layer.borderColor = [[UIColor blueColor] CGColor];
-    self.saveButton.layer.borderWidth = 1;
-    self.saveButton.layer.cornerRadius = 4;
+        [animator1 startAnimation];
+    }];
+    
+    
+    [animator startAnimation];
+    
     
 }
 

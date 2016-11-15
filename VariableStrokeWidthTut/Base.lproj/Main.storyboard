@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SketchPad-->
+        <!--My Sketch-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                             <constraint firstItem="coO-Yq-GIf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="zC0-vo-AOF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SketchPad" id="Dcu-rA-tqF">
+                    <navigationItem key="navigationItem" title="My Sketch" id="Dcu-rA-tqF">
                         <leftBarButtonItems>
                             <barButtonItem image="arrow-small-17.png" id="mKj-yl-Prl">
                                 <connections>
@@ -62,7 +62,7 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem image="list-fat-7.png" id="ugL-x8-dst">
+                            <barButtonItem image="icon_run.png" id="ugL-x8-dst">
                                 <connections>
                                     <segue destination="cgn-Jq-v9O" kind="show" identifier="showConfig" id="U2Y-J1-pL9"/>
                                 </connections>
@@ -95,7 +95,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-5d-r7k">
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-5d-r7k">
                                 <rect key="frame" x="157" y="158.5" width="35" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -121,7 +121,7 @@
                                     <action selector="penWidthSliderChanged:" destination="cgn-Jq-v9O" eventType="valueChanged" id="vot-zT-uFd"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9c-IH-sE5">
+                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9c-IH-sE5">
                                 <rect key="frame" x="157" y="227.5" width="35" height="35"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -144,19 +144,45 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VF-n5-K0W">
+                                <rect key="frame" x="234" y="144" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="V0V-zd-YMp"/>
+                                    <constraint firstAttribute="width" constant="64" id="zXk-Is-AYJ"/>
+                                </constraints>
+                                <state key="normal" image="color-wheel.png"/>
+                                <connections>
+                                    <action selector="colorButtonTapped:" destination="cgn-Jq-v9O" eventType="touchUpInside" id="Moc-Ci-NAz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzc-Ie-6nI">
+                                <rect key="frame" x="234" y="213" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="ggN-kB-RaQ"/>
+                                    <constraint firstAttribute="height" constant="64" id="yvI-7l-HjN"/>
+                                </constraints>
+                                <state key="normal" image="color-wheel.png"/>
+                                <connections>
+                                    <action selector="colorButtonTapped:" destination="cgn-Jq-v9O" eventType="touchUpInside" id="3aa-ps-G0h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2VF-n5-K0W" firstAttribute="centerY" secondItem="4x4-5d-r7k" secondAttribute="centerY" id="1DV-Fd-fhU"/>
                             <constraint firstItem="z9c-IH-sE5" firstAttribute="leading" secondItem="4x4-5d-r7k" secondAttribute="leading" id="3qN-nO-leL"/>
                             <constraint firstItem="Lm8-WQ-Uzo" firstAttribute="top" secondItem="ODM-FS-VID" secondAttribute="bottom" constant="31" id="4xX-AP-twr"/>
                             <constraint firstItem="4x4-5d-r7k" firstAttribute="centerY" secondItem="xCg-Wh-hAW" secondAttribute="centerY" id="CYs-uQ-zZa"/>
                             <constraint firstItem="RVC-9v-wyd" firstAttribute="centerY" secondItem="Lm8-WQ-Uzo" secondAttribute="centerY" id="CmF-6F-jG5"/>
+                            <constraint firstItem="lzc-Ie-6nI" firstAttribute="centerY" secondItem="z9c-IH-sE5" secondAttribute="centerY" id="Pbz-W4-dbq"/>
                             <constraint firstItem="3kr-nR-ttC" firstAttribute="leading" secondItem="xCg-Wh-hAW" secondAttribute="leading" id="RFN-Kg-vUO"/>
                             <constraint firstItem="z9c-IH-sE5" firstAttribute="centerY" secondItem="3kr-nR-ttC" secondAttribute="centerY" id="U7U-0d-VZl"/>
                             <constraint firstItem="4x4-5d-r7k" firstAttribute="leading" secondItem="RVC-9v-wyd" secondAttribute="leading" id="bUT-WQ-GpC"/>
+                            <constraint firstItem="2VF-n5-K0W" firstAttribute="leading" secondItem="4x4-5d-r7k" secondAttribute="trailing" constant="42" id="cgP-gL-dZu"/>
                             <constraint firstItem="xCg-Wh-hAW" firstAttribute="top" secondItem="Lm8-WQ-Uzo" secondAttribute="bottom" constant="48" id="ibV-Bd-uY4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RVC-9v-wyd" secondAttribute="trailing" id="ihb-WU-Veb"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Lm8-WQ-Uzo" secondAttribute="leading" id="lJz-u2-Ep9"/>
+                            <constraint firstItem="lzc-Ie-6nI" firstAttribute="leading" secondItem="2VF-n5-K0W" secondAttribute="leading" id="pa6-ej-PlE"/>
                             <constraint firstItem="xCg-Wh-hAW" firstAttribute="leading" secondItem="Lm8-WQ-Uzo" secondAttribute="leading" id="uNX-8s-xJJ"/>
                             <constraint firstItem="RVC-9v-wyd" firstAttribute="leading" secondItem="Lm8-WQ-Uzo" secondAttribute="trailing" constant="21" id="xeF-AF-XpO"/>
                             <constraint firstItem="3kr-nR-ttC" firstAttribute="top" secondItem="xCg-Wh-hAW" secondAttribute="bottom" constant="48" id="zDW-zT-7xl"/>
@@ -164,7 +190,7 @@
                     </view>
                     <connections>
                         <outlet property="bgButton" destination="z9c-IH-sE5" id="rrn-eX-lql"/>
-                        <outlet property="penButton" destination="4x4-5d-r7k" id="f18-gs-RTE"/>
+                        <outlet property="penButton" destination="4x4-5d-r7k" id="owW-lh-eqU"/>
                         <outlet property="penWidthSlider" destination="RVC-9v-wyd" id="Tr3-mw-ACm"/>
                     </connections>
                 </viewController>
@@ -192,8 +218,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-small-17.png" width="30" height="30"/>
-        <image name="arrow-small-18.png" width="30" height="30"/>
-        <image name="list-fat-7.png" width="30" height="30"/>
+        <image name="arrow-small-17.png" width="22" height="22"/>
+        <image name="arrow-small-18.png" width="22" height="22"/>
+        <image name="color-wheel.png" width="64" height="64"/>
+        <image name="icon_run.png" width="30" height="30"/>
     </resources>
 </document>

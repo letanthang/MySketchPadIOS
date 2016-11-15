@@ -15,8 +15,8 @@
 @property (strong, nonatomic) DRColorPickerColor* color;
 @property (weak, nonatomic) DRColorPickerViewController* colorPickerVC;
 @property (strong, nonatomic) IBOutlet UISlider *penWidthSlider;
-@property (strong, nonatomic) IBOutlet UIButton *penButton;
 @property (strong, nonatomic) IBOutlet UIButton *bgButton;
+@property (strong, nonatomic) IBOutlet UIButton *penButton;
 
 @end
 
@@ -24,6 +24,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.penButton.layer.borderWidth = 0.4;
+    self.penButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.penButton.layer.cornerRadius = 3;
+    
+    self.bgButton.layer.borderWidth = 0.4;
+    self.bgButton.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.bgButton.layer.cornerRadius = 3;
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -146,10 +155,10 @@
         }
         else
         {
-            if (sender.tag == 0) {
+            if (sender.tag == 100) {
                 self.penButton.backgroundColor = color.rgbColor;
                 self.delegate.penColor = color.rgbColor;
-            } else if (sender.tag == 1) {
+            } else if (sender.tag == 101) {
                 self.bgButton.backgroundColor = color.rgbColor;
                 self.delegate.bgColor = color.rgbColor;
             }

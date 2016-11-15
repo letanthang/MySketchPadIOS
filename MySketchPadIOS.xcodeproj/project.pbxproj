@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C74512781DDAF22B000A7AD5 /* Settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C74512771DDAF22B000A7AD5 /* Settings-50.png */; };
+		C745127B1DDAF35B000A7AD5 /* icon_run.png in Resources */ = {isa = PBXBuildFile; fileRef = C74512791DDAF35B000A7AD5 /* icon_run.png */; };
+		C745127C1DDAF35B000A7AD5 /* Settings-52.png in Resources */ = {isa = PBXBuildFile; fileRef = C745127A1DDAF35B000A7AD5 /* Settings-52.png */; };
+		C745127E1DDAFF9A000A7AD5 /* color-wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = C745127D1DDAFF9A000A7AD5 /* color-wheel.png */; };
 		C74E7C971DD2E0A30024BFE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7C961DD2E0A30024BFE0 /* main.m */; };
 		C74E7C9A1DD2E0A30024BFE0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7C991DD2E0A30024BFE0 /* AppDelegate.m */; };
 		C74E7C9D1DD2E0A30024BFE0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C74E7C9C1DD2E0A30024BFE0 /* ViewController.m */; };
@@ -30,6 +34,10 @@
 		AB4E151AF63B62E08428C120 /* Pods-VariableStrokeWidthTut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VariableStrokeWidthTut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VariableStrokeWidthTut/Pods-VariableStrokeWidthTut.debug.xcconfig"; sourceTree = "<group>"; };
 		BF8739D95E2AA757E608722A /* libPods-MySketchPadIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MySketchPadIOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C239174C6FFE912F102A9168 /* Pods-MySketchPadIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MySketchPadIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MySketchPadIOS/Pods-MySketchPadIOS.release.xcconfig"; sourceTree = "<group>"; };
+		C74512771DDAF22B000A7AD5 /* Settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-50.png"; sourceTree = "<group>"; };
+		C74512791DDAF35B000A7AD5 /* icon_run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_run.png; sourceTree = "<group>"; };
+		C745127A1DDAF35B000A7AD5 /* Settings-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-52.png"; sourceTree = "<group>"; };
+		C745127D1DDAFF9A000A7AD5 /* color-wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "color-wheel.png"; sourceTree = "<group>"; };
 		C74E7C921DD2E0A30024BFE0 /* MySketchPadIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySketchPadIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E7C961DD2E0A30024BFE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C74E7C981DD2E0A30024BFE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -132,7 +140,11 @@
 			children = (
 				C79F1B381DD9AECE008BF1DA /* arrow-small-17.png */,
 				C79F1B3A1DD9AED8008BF1DA /* arrow-small-18.png */,
+				C74512771DDAF22B000A7AD5 /* Settings-50.png */,
+				C74512791DDAF35B000A7AD5 /* icon_run.png */,
+				C745127A1DDAF35B000A7AD5 /* Settings-52.png */,
 				C79F1B331DD9705D008BF1DA /* list-fat-7.png */,
+				C745127D1DDAFF9A000A7AD5 /* color-wheel.png */,
 			);
 			name = Resouces;
 			sourceTree = "<group>";
@@ -219,12 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74512781DDAF22B000A7AD5 /* Settings-50.png in Resources */,
 				C74E7CA81DD2E0A30024BFE0 /* LaunchScreen.storyboard in Resources */,
 				C79F1B391DD9AECE008BF1DA /* arrow-small-17.png in Resources */,
 				C79F1B341DD9705D008BF1DA /* list-fat-7.png in Resources */,
+				C745127B1DDAF35B000A7AD5 /* icon_run.png in Resources */,
 				C74E7CA51DD2E0A30024BFE0 /* Assets.xcassets in Resources */,
 				C79F1B3B1DD9AED8008BF1DA /* arrow-small-18.png in Resources */,
+				C745127C1DDAF35B000A7AD5 /* Settings-52.png in Resources */,
 				C74E7CA01DD2E0A30024BFE0 /* Main.storyboard in Resources */,
+				C745127E1DDAFF9A000A7AD5 /* color-wheel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
