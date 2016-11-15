@@ -32,7 +32,9 @@ typedef struct
     LineSegment lastSegmentOfPrev;
     
     int count;
+    
     NSMutableArray *paths;
+    NSMutableArray *subPaths;
 }
 
 - (id)init {
@@ -84,57 +86,73 @@ typedef struct
 
 - (void)eraseDrawing:(UITapGestureRecognizer *)t
 {
+    //this is for undo
+    if (incrementalImage == nil) return ;
+    
+    subPaths = [[NSMutableArray alloc] init];
+    [self addPathForUndo];
+    
     incrementalImage = nil;
     [self setNeedsDisplay];
 }
 
 - (void)reDraw {
-    [self eraseDrawing:nil];
-    
-    count += 1;
-    
+    //erase all
+    incrementalImage = nil;
+    [self setNeedsDisplay];
     NSLog(@"paths count: %lu", (unsigned long)paths.count);
     
+    //start redraw from begin to paths.count - count
     for (int i = 0; i < paths.count - count; i++) {
-        UIBezierPath *offsetPath = paths[i];
-        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
-        if (!incrementalImage)
-        {
-            UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-            [[UIColor clearColor] setFill];
-            [rectpath fill];
+        NSMutableArray *subs = paths[i];
+        if (subs.count > 0) {
+            for (UIBezierPath *offsetPath in subs) {
+                UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+                if (!incrementalImage)
+                {
+                    UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+                    [[UIColor clearColor] setFill];
+                    [rectpath fill];
+                }
+                [incrementalImage drawAtPoint:CGPointZero];
+                [self.color setStroke];
+                [self.color setFill];
+                [offsetPath stroke]; // ................. (8)
+                [offsetPath fill];
+                incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                [self setNeedsDisplay];
+            }
+            
+        } else {
+            incrementalImage = nil;
+            [self setNeedsDisplay];
         }
-        [incrementalImage drawAtPoint:CGPointZero];
-        [self.color setStroke];
-        [self.color setFill];
-        [offsetPath stroke]; // ................. (8)
-        [offsetPath fill];
-        incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        [self setNeedsDisplay];
+        
+        
     }
     
-//    for (UIBezierPath *offsetPath in paths) {
-//        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
-//        if (!incrementalImage)
-//        {
-//            UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
-//            [[UIColor clearColor] setFill];
-//            [rectpath fill];
-//        }
-//        [incrementalImage drawAtPoint:CGPointZero];
-//        [self.color setStroke];
-//        [self.color setFill];
-//        [offsetPath stroke]; // ................. (8)
-//        [offsetPath fill];
-//        incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        [self setNeedsDisplay];
-//    }
+}
+
+- (void)undoDraw {
     
-   
+    if (count >= paths.count) return ;
+    count += 1;
+    
+    [self reDraw];
     
 }
+
+- (void)redoDraw {
+    
+    if (count <= 0) return;
+    count -= 1;
+    
+    [self reDraw];
+    
+}
+
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -143,6 +161,9 @@ typedef struct
     UITouch *touch = [touches anyObject];
     pts[0] = [touch locationInView:self];
     isFirstTouchPoint = YES;
+    subPaths = [[NSMutableArray alloc] init];
+    
+    
     
 }
 
@@ -205,9 +226,10 @@ typedef struct
                 
             }
             
-            UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0);
-        
+            //store path for undo
+            [subPaths addObject:offsetPath];
             
+            UIGraphicsBeginImageContextWithOptions(bounds.size, NO, 0.0);
             if (!incrementalImage)
             {
                 UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
@@ -222,7 +244,7 @@ typedef struct
             incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-            [paths addObject:offsetPath];
+            
             
             //[offsetPath removeAllPoints];
             
@@ -237,6 +259,7 @@ typedef struct
     }
 }
 
+
 - (void)drawRect:(CGRect)rect
 {
     [incrementalImage drawInRect:rect];
@@ -244,9 +267,29 @@ typedef struct
     //[incrementalImage drawInRect:rect blendMode:kCGBlendModeClear alpha:1];
 }
 
+- (void)addPathForUndo {
+    
+        // handle undo function
+        if (count > 0) {
+            
+            [paths removeObjectsInRange:NSMakeRange(paths.count - count, count)];
+            count = 0;
+        }
+        
+        [paths addObject:subPaths];
+
+}
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Left as an exercise!
+    // Store paths for undo
+    
+    if (subPaths.count > 0) {
+        
+        [self addPathForUndo];
+    }
+    
+    
     
     [self setNeedsDisplay];
 }

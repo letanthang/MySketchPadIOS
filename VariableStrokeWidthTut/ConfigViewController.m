@@ -14,9 +14,9 @@
 
 @property (strong, nonatomic) DRColorPickerColor* color;
 @property (weak, nonatomic) DRColorPickerViewController* colorPickerVC;
-@property (weak, nonatomic) IBOutlet UISlider *penWidthSlider;
-@property (weak, nonatomic) IBOutlet UIButton *penButton;
-@property (weak, nonatomic) IBOutlet UIButton *bgButton;
+@property (strong, nonatomic) IBOutlet UISlider *penWidthSlider;
+@property (strong, nonatomic) IBOutlet UIButton *penButton;
+@property (strong, nonatomic) IBOutlet UIButton *bgButton;
 
 @end
 

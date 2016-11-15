@@ -10,12 +10,13 @@
 
 @interface FinalAlgView : UIView
 
-@property(weak, nonatomic) UIColor *color;
-@property(weak, nonatomic) UIColor *bgColor;
+@property(strong, nonatomic) UIColor *color;
+@property(strong, nonatomic) UIColor *bgColor;
 @property(nonatomic) CGFloat lineWidth;
 
 - (UIImage *)captureView;
 - (void) setFillBG: (UIColor *)color;
-- (void)reDraw;
+- (void)undoDraw;
+- (void)redoDraw;
 
 @end

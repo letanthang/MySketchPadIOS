@@ -50,22 +50,29 @@
                     </view>
                     <navigationItem key="navigationItem" title="SketchPad" id="Dcu-rA-tqF">
                         <leftBarButtonItems>
-                            <barButtonItem image="list-fat-7.png" id="ugL-x8-dst">
-                                <connections>
-                                    <segue destination="cgn-Jq-v9O" kind="show" identifier="showConfig" id="U2Y-J1-pL9"/>
-                                </connections>
-                            </barButtonItem>
                             <barButtonItem image="arrow-small-17.png" id="mKj-yl-Prl">
                                 <connections>
                                     <action selector="undoTapped:" destination="BYZ-38-t0r" id="Js6-kR-Tn0"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="arrow-small-18.png" id="Drc-n4-27e">
+                                <connections>
+                                    <action selector="redoTapped:" destination="BYZ-38-t0r" id="aZP-1X-r6k"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dk5-W1-zQQ">
-                            <connections>
-                                <action selector="saveTapped:" destination="BYZ-38-t0r" id="bbu-bk-1hy"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="list-fat-7.png" id="ugL-x8-dst">
+                                <connections>
+                                    <segue destination="cgn-Jq-v9O" kind="show" identifier="showConfig" id="U2Y-J1-pL9"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="save" id="dk5-W1-zQQ">
+                                <connections>
+                                    <action selector="saveTapped:" destination="BYZ-38-t0r" id="bbu-bk-1hy"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="coO-Yq-GIf" id="D6z-Cy-mpT"/>
@@ -186,6 +193,7 @@
     </scenes>
     <resources>
         <image name="arrow-small-17.png" width="30" height="30"/>
+        <image name="arrow-small-18.png" width="30" height="30"/>
         <image name="list-fat-7.png" width="30" height="30"/>
     </resources>
 </document>

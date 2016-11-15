@@ -14,13 +14,13 @@
 @interface ViewController ()
 
 
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (strong, nonatomic) IBOutlet UIView *containerView;
 
-@property (weak, nonatomic) IBOutlet FinalAlgView *padView;
+@property (strong, nonatomic) IBOutlet FinalAlgView *padView;
 
-@property (weak, nonatomic) IBOutlet UIButton *colorButton;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
-@property (weak, nonatomic) IBOutlet UISlider *widthSlider;
+@property (strong, nonatomic) IBOutlet UIButton *colorButton;
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UISlider *widthSlider;
 
 @end
 
@@ -81,7 +81,11 @@
 }
 
 - (IBAction)undoTapped:(id)sender {
-    [self.padView reDraw];
+    [self.padView undoDraw];
+}
+
+- (IBAction)redoTapped:(id)sender {
+    [self.padView redoDraw];
 }
 
 
