@@ -13,7 +13,8 @@
 @property (strong, nonatomic) UIColor *penColor;
 @property (strong, nonatomic) UIColor *bgColor;
 @property (strong, nonatomic) UIImage *bgImage;
-@property (nonatomic) CGFloat penWidth;
+@property (nonatomic) float penWidth;
+@property (nonatomic) float penEffect;
 
 @end
 

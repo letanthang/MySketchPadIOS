@@ -15,6 +15,8 @@
 @property (strong, nonatomic) DRColorPickerColor* color;
 @property (weak, nonatomic) DRColorPickerViewController* colorPickerVC;
 @property (strong, nonatomic) IBOutlet UISlider *penWidthSlider;
+@property (weak, nonatomic) IBOutlet UISlider *penEffectSlider;
+
 @property (strong, nonatomic) IBOutlet UIButton *bgButton;
 @property (strong, nonatomic) IBOutlet UIButton *penButton;
 
@@ -39,6 +41,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.penWidthSlider.value = self.delegate.penWidth;
+    self.penEffectSlider.value = self.delegate.penEffect;
     self.penButton.backgroundColor = self.delegate.penColor;
     self.bgButton.backgroundColor = self.delegate.bgColor;
     
@@ -50,6 +53,9 @@
 
 - (IBAction)penWidthSliderChanged:(UISlider *)sender {
     self.delegate.penWidth = sender.value;
+}
+- (IBAction)penEffectSliderChanged:(UISlider *)sender {
+    self.delegate.penEffect = sender.value;
 }
 
 

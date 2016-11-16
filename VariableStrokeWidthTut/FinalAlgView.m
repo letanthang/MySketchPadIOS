@@ -7,7 +7,7 @@
 //
 
 #define CAPACITY 100
-#define FF .2
+#define FF 0.2 //0 ->0.2
 #define LOWER 0.01
 #define UPPER 1.0
 
@@ -47,6 +47,7 @@ typedef struct
 
 - (void) initHelper {
     self.color = [UIColor blackColor];
+    self.lineEffect = 0.1;
     self.opaque = false;
     count = 0;
     paths = [[NSMutableArray alloc] init];
@@ -207,9 +208,9 @@ typedef struct
                 else
                     ls[0] = lastSegmentOfPrev;
                 
-                float frac1 = FF/clamp(len_sq(pointsBuffer[i], pointsBuffer[i+1]), LOWER, UPPER); // ................. (4)
-                float frac2 = FF/clamp(len_sq(pointsBuffer[i+1], pointsBuffer[i+2]), LOWER, UPPER);
-                float frac3 = FF/clamp(len_sq(pointsBuffer[i+2], pointsBuffer[i+3]), LOWER, UPPER);
+                float frac1 = self.lineEffect/clamp(len_sq(pointsBuffer[i], pointsBuffer[i+1]), LOWER, UPPER); // ................. (4)
+                float frac2 = self.lineEffect/clamp(len_sq(pointsBuffer[i+1], pointsBuffer[i+2]), LOWER, UPPER);
+                float frac3 = self.lineEffect/clamp(len_sq(pointsBuffer[i+2], pointsBuffer[i+3]), LOWER, UPPER);
                 ls[1] = [self lineSegmentPerpendicularTo:(LineSegment){pointsBuffer[i], pointsBuffer[i+1]} ofRelativeLength:frac1]; // ................. (5)
                 ls[2] = [self lineSegmentPerpendicularTo:(LineSegment){pointsBuffer[i+1], pointsBuffer[i+2]} ofRelativeLength:frac2];
                 ls[3] = [self lineSegmentPerpendicularTo:(LineSegment){pointsBuffer[i+2], pointsBuffer[i+3]} ofRelativeLength:frac3];

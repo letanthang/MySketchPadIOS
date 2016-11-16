@@ -31,6 +31,7 @@
     self.penColor = [UIColor blackColor];
     self.bgColor = [UIColor whiteColor];
     self.penWidth = 1.0;
+    self.penEffect = 0.03;
     
     //1: style navigation bar title
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor blueColor], NSFontAttributeName: [UIFont fontWithName:@"Baskerville-Italic" size:22]}];
@@ -95,6 +96,7 @@
     self.containerView.backgroundColor = self.bgColor;
     self.padView.color = self.penColor;
     self.padView.lineWidth = self.penWidth;
+    self.padView.lineEffect = self.penEffect;
     
     if (self.bgImage) {
         self.containerView.backgroundColor = [UIColor colorWithPatternImage:self.bgImage];

@@ -12,7 +12,8 @@
 
 @property(strong, nonatomic) UIColor *color;
 @property(strong, nonatomic) UIColor *bgColor;
-@property(nonatomic) CGFloat lineWidth;
+@property(nonatomic) float lineWidth;
+@property(nonatomic) float lineEffect;
 
 - (UIImage *)captureView;
 - (void) setFillBG: (UIColor *)color;
