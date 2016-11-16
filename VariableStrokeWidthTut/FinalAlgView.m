@@ -104,35 +104,40 @@ typedef struct
     NSLog(@"paths count: %lu", (unsigned long)paths.count);
     
     //start redraw from begin to paths.count - count
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
     for (int i = 0; i < paths.count - count; i++) {
         NSMutableArray *subs = paths[i];
         if (subs.count > 0) {
             for (UIBezierPath *offsetPath in subs) {
-                UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
+                
                 if (!incrementalImage)
                 {
                     UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
                     [[UIColor clearColor] setFill];
                     [rectpath fill];
+                    incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
                 }
                 [incrementalImage drawAtPoint:CGPointZero];
                 [self.color setStroke];
                 [self.color setFill];
                 [offsetPath stroke]; // ................. (8)
                 [offsetPath fill];
-                incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext();
-                [self setNeedsDisplay];
+                
             }
             
         } else {
+            //UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+            //[[UIColor clearColor] setFill];
+            //[rectpath fill];
+            UIGraphicsEndImageContext();
+            UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.0);
             incrementalImage = nil;
-            [self setNeedsDisplay];
+            //[self setNeedsDisplay];
         }
-        
-        
     }
-    
+    incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    [self setNeedsDisplay];
 }
 
 - (void)undoDraw {

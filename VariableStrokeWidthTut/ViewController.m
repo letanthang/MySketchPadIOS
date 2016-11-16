@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) IBOutlet FinalAlgView *padView;
 
-
+@property (atomic) int tapCount;
 
 @end
 
@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tapCount = 0;
     
     //0: init config
     self.penColor = [UIColor blackColor];
@@ -61,27 +63,45 @@
     
     
     //3: display & hide it with animator
-   
-    
-    UIViewPropertyAnimator *animator = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.9 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        flashLabel.alpha = 1.0;
-        flashLabel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.4, 1.4);
+    if(NSClassFromString(@"UIViewPropertyAnimator")) {
+        [[NSProcessInfo processInfo] operatingSystemVersion];
         
-    } completion:^(UIViewAnimatingPosition finalPosition) {
-        UIViewPropertyAnimator *animator1 = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            
-            flashLabel.alpha = 0;
-            flashLabel.transform = CGAffineTransformIdentity;
+        
+        UIViewPropertyAnimator *animator = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.9 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            flashLabel.alpha = 1.0;
+            flashLabel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.4, 1.4);
             
         } completion:^(UIViewAnimatingPosition finalPosition) {
-            [flashLabel removeFromSuperview];
+            UIViewPropertyAnimator *animator1 = [UIViewPropertyAnimator runningPropertyAnimatorWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                
+                flashLabel.alpha = 0;
+                flashLabel.transform = CGAffineTransformIdentity;
+                
+            } completion:^(UIViewAnimatingPosition finalPosition) {
+                [flashLabel removeFromSuperview];
+            }];
+            
+            [animator1 startAnimation];
         }];
-
-        [animator1 startAnimation];
-    }];
+        
+        
+        [animator startAnimation];
+    } else {
+        
+        [UIView animateWithDuration:0.9 animations:^{
+            flashLabel.alpha = 1.0;
+            flashLabel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.4, 1.4);
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.4 animations:^{
+                flashLabel.alpha = 0;
+                flashLabel.transform = CGAffineTransformIdentity;
+            } completion:nil];
+        }];
+        
+    }
     
     
-    [animator startAnimation];
     
     
 }
@@ -123,12 +143,18 @@
     
 }
 
-- (IBAction)undoTapped:(id)sender {
+- (IBAction)undoTapped:(UIBarButtonItem*)sender {
+    
+//    self.navigationItem.leftBarButtonItems[0].enabled = NO;
     [self.padView undoDraw];
+//    self.navigationItem.leftBarButtonItems[0].enabled = YES;
+    
 }
 
-- (IBAction)redoTapped:(id)sender {
+- (IBAction)redoTapped:(UIBarButtonItem*)sender {
+//    self.navigationItem.leftBarButtonItems[1].enabled = NO;
     [self.padView redoDraw];
+//    self.navigationItem.leftBarButtonItems[1].enabled = YES;
 }
 
 

@@ -101,9 +101,13 @@
     // END OPTIONAL SETUP
     
     // create the color picker
+    
+    
+    
     DRColorPickerViewController* vc = [DRColorPickerViewController newColorPickerWithColor:self.color];
     vc.modalPresentationStyle = UIModalPresentationFormSheet;
     vc.rootViewController.showAlphaSlider = YES; // default is YES, set to NO to hide the alpha slider
+    
     
     NSInteger theme = 2; // 0 = default, 1 = dark, 2 = light
     
@@ -140,13 +144,22 @@
     // make an import block, this allows using images as colors, this import block uses the UIImagePickerController,
     // but in You Doodle for iOS, I have a more complex import that allows importing from many different sources
     // *** Leave this as nil to not allowing import of textures ***
-    vc.rootViewController.importBlock = ^(UINavigationController* navVC, DRColorPickerHomeViewController* rootVC, NSString* title)
-    {
-        UIImagePickerController* p = [[UIImagePickerController alloc] init];
-        p.delegate = self;
-        p.modalPresentationStyle = UIModalPresentationCurrentContext;
-        [self.colorPickerVC presentViewController:p animated:YES completion:nil];
-    };
+    
+    
+    // mod: do not allow import for pen color
+    if (sender.tag == 100) {
+        vc.rootViewController.importBlock = nil;
+        
+    } else {
+        vc.rootViewController.importBlock = ^(UINavigationController* navVC, DRColorPickerHomeViewController* rootVC, NSString* title)
+        {
+            UIImagePickerController* p = [[UIImagePickerController alloc] init];
+            p.delegate = self;
+            p.modalPresentationStyle = UIModalPresentationCurrentContext;
+            [self.colorPickerVC presentViewController:p animated:YES completion:nil];
+        };
+    }
+    
     
     // dismiss the color picker
     vc.rootViewController.dismissBlock = ^(BOOL cancel)
@@ -157,11 +170,14 @@
     // a color was selected, do something with it, but do NOT dismiss the color picker, that happens in the dismissBlock
     vc.rootViewController.colorSelectedBlock = ^(DRColorPickerColor* color, DRColorPickerBaseViewController* vc)
     {
+        if (color.rgbColor == nil && color.image == nil) return;
+        
         self.color = color;
         if (color.rgbColor == nil)
         {
-            
-            self.delegate.bgImage = color.image;
+            if (sender.tag == 101) {
+                self.delegate.bgImage = color.image;
+            }
         }
         else
         {
@@ -179,6 +195,7 @@
     };
     
     // finally, present the color picker
+    //[self.navigationController pushViewController:vc animated:YES];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
